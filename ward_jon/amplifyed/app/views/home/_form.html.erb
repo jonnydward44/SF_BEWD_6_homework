@@ -1,0 +1,42 @@
+<%= form_for @home, :html => {:multipart => true} do |f| %>
+  <% if @home.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@content.errors.count, "error") %> prohibited this content from being saved:</h2>
+
+      <ul>
+      <% @home.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :picture %><br>
+   <%= f.file_field :picture %>
+  </div>
+  <div class="field">
+    <%= f.label :price %><br>
+    <%= f.number_field :price %>
+ <div></div>
+   <div class ="field">
+    <%= f.label :licensing %><br>
+    <%= radio_button_tag(:licensing, "Editorial") %>
+    <%= label_tag(:licensing_editorial, "Editorial") %>
+    <%= radio_button_tag(:licensing, "Commercial") %>
+    <%= label_tag(:licensing_commercial, "Commercial") %>
+    <%= radio_button_tag(:licensing, "Exclusive") %>
+    <%= label_tag(:licensing_exclusive, "Exclusive") %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,25 @@
+
+<p id="notice"><%= notice %></p>
+
+<div class="row">
+  <div class="col-md-9">
+    <%= image_tag(@home.picture_url, width: '100%') if @home.picture.present? %>
+  </div>
+
+  <div class="col-md-3">
+    <p><b>Name: </b><%= @home.name %></p>
+    <p><b>Description: </b><%= @home.description %></p>
+    <p><b>Price: </b><%= @home.price %></p>
+    
+    <p>
+      <%= link_to 'Delete', @home, data: { confirm: 'Are you sure?' }, method: :delete %> |
+      <%= link_to 'Back', homes_path %>
+    </p>
+
+    <p>
+    <%= render 'form' %>
+
+		
+		</p>
+  </div>
+</div>

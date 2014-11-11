@@ -1,0 +1,20 @@
+
+<h1>Your Content</h1>
+
+<% @contents.in_groups_of(3) do |group| %>
+  <div class="row">
+    <% group.compact.each do |content| %>
+      <div class="col-xs-3">
+        <%= image_tag content.picture_url, width: '100%' if content.picture.present?%>
+        <h4><%= link_to content.name, content %></h4>
+        <p><h5>description</h5><%= content.description %> </p>
+        <h5>price</h5><%= content.price %>
+      </div>
+    <% end %>
+  </div>
+<% end %>
+       
+
+
+
+      

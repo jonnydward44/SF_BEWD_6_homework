@@ -1,0 +1,15 @@
+<h1>Your Videos</h1>
+
+<% @homes.in_groups_of(3) do |group| %>
+  <div class="row">
+    <% group.compact.each do |content| %>
+      <div class="col-md-4">
+        <%= image_tag home.picture_url, width: '100%' if home.picture.present?%>
+        <h4><%= link_to home.name, content %></h4>
+        <p><h5>description</h5><%= content.description %> </p>
+        <h5>price</h5><%= home.price %>
+      </div>
+    <% end %>
+  </div>
+<% end %>
+       
