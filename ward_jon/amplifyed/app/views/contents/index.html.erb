@@ -8,7 +8,7 @@
         <%= image_tag content.picture_url, width: '100%' if content.picture.present?%>
         <h4><%= link_to content.name, content %></h4>
         <p><h5>description</h5><%= content.description %> </p>
-        <h5>price</h5><%= content.price %>
+        <h5>price</h5>$<%= content.price %>
       </div>
     <% end %>
   </div>

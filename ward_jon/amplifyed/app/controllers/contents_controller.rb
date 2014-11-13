@@ -5,7 +5,7 @@ class ContentsController < ApplicationController
   # GET /contents
   # GET /contents.json
   def index
-    @contents = Content.all
+    @contents = current_user.contents.all
   end
 
   # GET /contents/1
@@ -25,7 +25,7 @@ class ContentsController < ApplicationController
   # POST /contents
   # POST /contents.json
   def create
-    @content = Content.new(content_params)
+    @content = current_user.contents.new(content_params)
 
     respond_to do |format|
       if @content.save
